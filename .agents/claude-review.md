@@ -4,6 +4,14 @@ This project uses Claude Code as the independent judge in Codex-led Arena runs a
 
 The workflow is Claude task planning, Codex implementation and tests, Codex adversarial review in a fresh context, then a fresh Claude review of the final result. Arena's independent judgment occurs within the Codex stage whenever Arena compares candidates.
 
+## 作業言語
+
+レビューの依頼文、進捗、指摘、採点理由、引き継ぎ文は日本語で書く。サブエージェントや外部セッションへの依頼には、日本語で報告する指定を毎回含める。手動フォールバックにも同じ指定を引き継ぐ。
+
+コード識別子、コマンド、ファイルパス、API名、ログ原文、JSONキー、機械処理用の固定値は元の表記を保ち、構造化出力の説明文の値を日本語にする。ユーザーが別言語を明示した場合は、その指定に従う。
+
+ヘルパーはプロジェクトの指示ファイルを読み込まないため、この言語指定を固定の依頼文に含める。
+
 ## Run a review
 
 From the repository root, prepare a separate input directory for each review stage and round under `work/`. Put the request and every file the reviewer needs inside that directory. Paths in the request are relative to this input directory. Keep scores, author identities, other stages' receipts, and unrelated files outside it. Put the output receipt outside the input directory and use a new output path for each run.

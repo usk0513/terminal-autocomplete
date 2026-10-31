@@ -1,5 +1,12 @@
 # Project instructions
 
+## 作業言語
+
+- メインセッションとサブエージェントの作業説明、進捗、調査結果、レビュー、引き継ぎ文は日本語で書く。
+- サブエージェントへの依頼文、追加依頼、外部のClaudeやCodexへの委譲も日本語で書き、日本語で報告する指定を毎回明記する。
+- コード識別子、コマンド、ファイルパス、API名、ログ原文、JSONキー、機械処理用の固定値は元の表記を保つ。構造化出力の説明文の値は日本語にする。
+- pstackの英語テンプレートより、このプロジェクトの言語指定を優先する。ユーザーが別言語を明示した場合は、その指定に従う。
+
 ## pstack in Codex
 
 - When using a pstack skill, read [.agents/pstack-models.md](.agents/pstack-models.md) for this project's role assignments. These assignments override the skill's model defaults.

@@ -11,6 +11,9 @@ In Claude Code every `Agent` subagent is a Claude model, so the arena skill's Ph
 ## How to run it
 
 1. After every Phase B candidate has finished writing, use the Write tool to put the judge prompt in a file next to the arena outputs, such as `/tmp/arena-<slug>/judge-prompt.md`. The prompt holds the task, the rubric, and each candidate's label with its absolute path. It tells Codex to read only and change nothing, to score every candidate on every criterion, and to recommend one base with its rationale.
+
+   審査依頼文は日本語で作成する。「説明・進捗・調査結果・指摘・採点理由・引き継ぎ文は日本語で書く。コード識別子、コマンド、ファイルパス、API名、ログ原文、JSONキー、機械処理用の固定値は元の表記を保ち、構造化出力の説明文の値は日本語にする」と毎回明記する。ユーザーが別言語を明示した場合は、その指定に従う。
+
 2. Run the judge as one bare Bash command with `run_in_background: true`, so it runs while you read the candidates in Phase D:
 
    `node "<home>/.claude/plugins/cache/openai-codex/codex/1.0.6/scripts/codex-companion.mjs" task --fresh --model gpt-6.1-sol --effort xhigh --prompt-file /tmp/arena-<slug>/judge-prompt.md`

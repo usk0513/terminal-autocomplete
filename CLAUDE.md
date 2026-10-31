@@ -1,5 +1,14 @@
 # Claude project instructions
 
+## 作業言語
+
+- メインセッションとサブエージェントの作業説明、進捗、調査結果、レビュー、引き継ぎ文は日本語で書く。
+- サブエージェントへの依頼文、追加依頼、外部のClaudeやCodexへの委譲も日本語で書き、日本語で報告する指定を毎回明記する。
+- コード識別子、コマンド、ファイルパス、API名、ログ原文、JSONキー、機械処理用の固定値は元の表記を保つ。構造化出力の説明文の値は日本語にする。
+- pstackの英語テンプレートより、このプロジェクトの言語指定を優先する。ユーザーが別言語を明示した場合は、その指定に従う。
+
+## プロジェクト情報
+
 Read [README.md](README.md) for the project goal and [.agents/claude-review.md](.agents/claude-review.md) for the review workflow.
 
 The project default is Opus with xhigh effort, configured in [.claude/settings.json](.claude/settings.json). The native GPT role assignments in `.agents/pstack-models.md` apply to Codex, not to Claude. For Claude-native pstack subagents, use the Claude-side pstack rule and the installed Claude Code adapter.
